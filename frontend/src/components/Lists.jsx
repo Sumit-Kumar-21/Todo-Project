@@ -1,8 +1,5 @@
-function Lists({ marketLists, call }) {
-    const reRender = () => {
-      call();
-    };
-  
+function Lists({ marketLists }) {
+
     return (
       <div
         style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -62,7 +59,6 @@ function Lists({ marketLists, call }) {
                   if (!response.ok) {
                     alert("Something went wrong");
                   }
-                  reRender();
                 }}
                 style={{
                   padding: "10px",
@@ -91,7 +87,6 @@ function Lists({ marketLists, call }) {
                   if (!response.ok) {
                     alert("Something went wrong");
                   }
-                  reRender();
                 }}
                 style={{
                   padding: "10px",

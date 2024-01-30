@@ -5,15 +5,15 @@ import Lists from "./Lists";
 function MarketList() {
   const [marketLists, setMList] = useState([]);
 
-  async function render() {
+  async function reRender() {
     const response = await fetch("http://localhost:3000/api/list/lists");
     const json = await response.json();
     setMList(json.lists);
   }
 
   useEffect(() => {
-    render();
-  }, []);
+    reRender();
+  }, [marketLists]);
 
   return (
     <div
@@ -30,7 +30,7 @@ function MarketList() {
         }}
       >
         <div style={{ marginBottom: "20px" }}>
-          <CreateList call={render}></CreateList>
+          <CreateList></CreateList>
         </div>
 
         <div style={{ borderTop: "1px solid #ddd", paddingTop: "20px" }}>
@@ -44,7 +44,7 @@ function MarketList() {
             Lists:
           </div>
           <div style={{ overflow: "auto", height: "400px" }}>
-            <Lists marketLists={marketLists} call={render}></Lists>
+            <Lists marketLists={marketLists}></Lists>
           </div>
         </div>
       </div>

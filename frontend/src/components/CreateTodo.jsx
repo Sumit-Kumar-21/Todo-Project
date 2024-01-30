@@ -1,12 +1,10 @@
 import { useState, memo } from "react";
 
-const CreateTodo = memo(function ({ call }) {
-  //react-query
+const CreateTodo = memo(function () {
+  
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  // const reRender =()=>{
-  //     call();
-  // }
+
 
   return (
     <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
@@ -68,7 +66,7 @@ const CreateTodo = memo(function ({ call }) {
 
           // reRender();
           // window.location.reload();
-          call();
+          // call();
         }}
       >
         add todo

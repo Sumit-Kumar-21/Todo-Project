@@ -13,36 +13,8 @@ function TodoMain() {
 
   useEffect(() => {
     render();
-  }, []);
+  }, [todos]);
 
-  //   return (
-  //     <div style={{display:"flex",flexWrap:"wrap", justifyContent:"center"}}>
-  //       <TodoWrapper>
-  //         <CreateTodo call={render}></CreateTodo>
-  //         <button style={{backgroundColor:"brown", color:"white"}} onClick={ () => {
-  //           window.location.reload();
-  //         }}>refresh</button>
-  //         </TodoWrapper>
-
-  //         <ListTodoWrapper>
-  //           <h1>Lists:</h1>
-  //           <Todo todos={todos} call={render}></Todo>
-  //         </ListTodoWrapper>
-
-  //     </div>
-  //   );
-  // }
-
-  // const TodoWrapper=({children})=>{
-  //   return <div style={{border: "2px solid black", width:"30%",padding:"1%",height:"15vh", display:"inline-block", backgroundColor:"grey",alignSelf:"center", order:"1"}}>
-  //     {children}
-  //   </div>
-  // }
-  // const ListTodoWrapper=({children})=>{
-  //   return <div style={{border: "2px solid black", width:"30%", height:"85vh",padding:"1%",overflow:"auto", backgroundColor:"grey", display:"inline-block", order:"2", marginLeft:"2%"}}>
-  //     {children}
-  //   </div>
-  // }
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -58,7 +30,7 @@ function TodoMain() {
         }}
       >
         <div style={{ marginBottom: "20px" }}>
-          <CreateTodo call={render}></CreateTodo>
+          <CreateTodo />
         </div>
 
         <div style={{ borderTop: "1px solid #ddd", paddingTop: "20px" }}>
@@ -72,7 +44,7 @@ function TodoMain() {
             Lists:
           </div>
           <div style={{ overflow: "auto", height: "400px" }}>
-            <Todo todos={todos} call={render}></Todo>
+            <Todo todos={todos} ></Todo>
           </div>
         </div>
       </div>

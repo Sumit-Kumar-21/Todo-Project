@@ -1,12 +1,10 @@
 import { useState, memo } from "react";
 
-const CreateList = memo(function ({ call }) {
+const CreateList = memo(function () {
   //react-query
   const [itemName, setTitle] = useState("");
   const [amount, setAmount] = useState("");
-  // const reRender =()=>{
-  //     call();
-  // }
+
 
   return (
     <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
@@ -63,8 +61,6 @@ const CreateList = memo(function ({ call }) {
 
           setTitle("");
           setAmount("");
-
-          call();
         }}
       >
         add

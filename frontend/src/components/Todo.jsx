@@ -1,33 +1,4 @@
-/*
-    todo = [{
-        title: "asfhhga"
-        description: "jsfdaug"
-    }]
-*/
-/*
-function Todo(props){
-    const todos = popos.todos
-    return(
-        <>
-            {todos.map(todo=>{
-                return <div>
-                    <h1>{todo.title}</h1><br />
-                    <h3>{todo.description}</h3><br />
-                    <button>{todo.completed ==true ? "done" : "Mark as completed"}</button>
-                </div>
-            })}
-        </>
-    )
-}
-
-below code is correct in place of props => {todos}
-*/
-
-function Todo({ todos, call }) {
-  const reRender = () => {
-    call();
-  };
-
+function Todo({ todos }) {
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -87,7 +58,6 @@ function Todo({ todos, call }) {
                 if (!response.ok) {
                   alert("Something went wrong");
                 }
-                reRender();
               }}
               style={{
                 padding: "10px",
@@ -116,7 +86,6 @@ function Todo({ todos, call }) {
                 if (!response.ok) {
                   alert("Something went wrong");
                 }
-                reRender();
               }}
               style={{
                 padding: "10px",

@@ -14,9 +14,7 @@ app.use(cors());
 // connect Mongoo
 connetMongoose(
   "mongodb+srv://********@cluster0.kpmct6i.mongodb.net/todos"
-).then(() => {
-  console.log("Mongoo connected");
-});
+);
 
 //route middleware
 app.use('/api/todo', todoRouter);
